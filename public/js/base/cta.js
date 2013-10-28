@@ -10,6 +10,26 @@ define(['jquery'], function ($) {
   function attachToCTA() {
     var frag = document.createDocumentFragment();
 
+ 
+ if( navigator.userAgent.match(/Android/i)
+ || navigator.userAgent.match(/webOS/i)
+ || navigator.userAgent.match(/iPhone/i)
+ || navigator.userAgent.match(/iPad/i)
+ || navigator.userAgent.match(/iPod/i)
+ || navigator.userAgent.match(/BlackBerry/i)
+ || navigator.userAgent.match(/Windows Phone/i)
+ ){
+    for (var i = 0; i < cta.length; ++i) {
+      var item = createCTA({
+        "title": cta[i].title,
+        "desc": cta[i].desc,
+        "image": cta[i].image,
+       
+      });
+
+      $('.make-wrapper').append(item);
+  }
+ else {
     for (var i = 0; i < cta.length; ++i) {
       var item = createCTA({
         "title": cta[i].title,
@@ -19,7 +39,9 @@ define(['jquery'], function ($) {
       });
 
       $('.make-wrapper').append(item);
-    }
+  }
+
+    
   }
 
   function createCTA(itemObj) {
