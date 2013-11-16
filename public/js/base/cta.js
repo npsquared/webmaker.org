@@ -10,26 +10,6 @@ define(['jquery'], function ($) {
   function attachToCTA() {
     var frag = document.createDocumentFragment();
 
- 
- if( navigator.userAgent.match(/Android/i)
- || navigator.userAgent.match(/webOS/i)
- || navigator.userAgent.match(/iPhone/i)
- || navigator.userAgent.match(/iPad/i)
- || navigator.userAgent.match(/iPod/i)
- || navigator.userAgent.match(/BlackBerry/i)
- || navigator.userAgent.match(/Windows Phone/i)
- ){
-    for (var i = 0; i < cta.length; ++i) {
-      var item = createCTA({
-        "title": cta[i].title,
-        "desc": cta[i].desc,
-        "image": cta[i].image,
-       
-      });
-
-      $('.make-wrapper').append(item);
-  }
- else {
     for (var i = 0; i < cta.length; ++i) {
       var item = createCTA({
         "title": cta[i].title,
@@ -39,9 +19,7 @@ define(['jquery'], function ($) {
       });
 
       $('.make-wrapper').append(item);
-  }
-
-    
+    }
   }
 
   function createCTA(itemObj) {
@@ -60,10 +38,10 @@ define(['jquery'], function ($) {
     $a.attr('href', url);
 
     var $title_span = $('<span class="make-footer-item-title">');
-    $title_span.text(title);
+    $title_span.html(title);
 
     var $desc_span = $('<span class="make-footer-item-desc">');
-    $desc_span.text(desc);
+    $desc_span.html(desc);
 
     $div.append($title_span);
     $div.append($desc_span);
