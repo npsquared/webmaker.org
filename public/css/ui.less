@@ -124,6 +124,7 @@
     width: 100%;
     padding: 0 @gutter * 2 * @unit;
   }
+  
 }
 
 // Galleries only
@@ -669,3 +670,19 @@ button i.icon-angle-right {
 .icon-popcorn {
   background-image: url(../img/icon-make-popcorn.png);
 }
+
+
+
+/* ******* mobile *********** */
+@media (max-width: @width-medium) {
+      a.title{
+          pointer-events: none;
+   cursor: default;
+      }
+   }
+   @media (max-width: @width-small) {
+      a.title{
+          pointer-events: none;
+   cursor: default;
+      }
+   }
